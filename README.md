@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+<div align="center">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 🧳 Tour Planning — "Plan With Shariq"
 
-## Available Scripts
+**Browse Indian tour packages, read more about the ones you like and remove the ones you don't — a clean React app for shortlisting your next trip.**
 
-In the project directory, you can run:
+[![Live Demo](https://img.shields.io/badge/Live_Demo-tour--planning.vercel.app-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://tour-planning.vercel.app)
 
-### `npm start`
+![React](https://img.shields.io/badge/React_18-20232A?style=flat-square&logo=react&logoColor=61DAFB)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+![GitHub last commit](https://img.shields.io/github/last-commit/Shariq2003/Tour_Planning?style=flat-square)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+[Features](#-features) · [How it works](#-how-it-works) · [Getting Started](#-getting-started) · [Structure](#-project-structure)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+</div>
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## ✨ Features
 
-### `npm run build`
+| | Feature |
+|---|---|
+| 🗺️ | **Tour cards** — destinations like Agra, Jaipur, Goa and Varanasi with image and price |
+| 📖 | **Read more / show less** for long descriptions (first 200 characters by default) |
+| ❌ | **Not Interested** removes a tour from the list |
+| 🔄 | **Refresh** brings every tour back once the list is empty |
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🔄 How it works
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```mermaid
+stateDiagram-v2
+    [*] --> Browsing: load tours from data.js
+    Browsing --> Browsing: Read More / Show Less
+    Browsing --> Browsing: Not Interested (remove one)
+    Browsing --> Empty: last tour removed
+    Empty --> Browsing: Refresh
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🚀 Getting Started
 
-### `npm run eject`
+```bash
+git clone https://github.com/Shariq2003/Tour_Planning.git
+cd Tour_Planning
+npm install
+npm start            # http://localhost:3000
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<details>
+<summary><b>✏️ Add your own tours</b></summary>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Edit [`src/data.js`](src/data.js):
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```js
+{
+  id: "unique-id",
+  name: "Udaipur",
+  info: "Long description of the trip…",
+  image: "https://…",
+  price: "45,000",
+}
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+</details>
 
-## Learn More
+## 📁 Project Structure
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<details>
+<summary><b>Expand tree</b></summary>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```text
+src/
+├── components/
+│   ├── Cards.jsx    # list of tours
+│   └── Card.jsx     # single tour, read-more toggle, remove button
+├── data.js          # tour packages
+└── App.js           # state, remove & refresh
+```
 
-### Code Splitting
+</details>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+<div align="center">
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Built by **[Shariq](https://github.com/Shariq2003)** · [LinkedIn](https://www.linkedin.com/in/shariq-sd)
 
-### Making a Progressive Web App
+⭐ If you like this project, consider giving it a star!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+</div>
